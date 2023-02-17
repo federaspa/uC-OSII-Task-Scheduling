@@ -12,24 +12,24 @@ Within μC/OS-II there are two functions to create a task:
 
 | Parameter                         	| Type   	|
 |------------------------------------------------	|:--------:	|
-| (*task)(void\*pd): pointer on the task function 	| void   	|
-| *pdata: payload pointer used at the creation   	| void   	|
-| *ptos: pointer on top of stack                 	| OS_STK 	|
+| (task)(void\*pd): pointer on the task function 	| void *   	|
+| pdata: payload pointer used at the creation   	| void *   	|
+| ptos: pointer on top of stack                 	| OS_STK * 	|
 | prio: priority of the task (limited to 64)     	| INT8U  	|
 
 -   **OSTaskCreateExt** is the extended version, with 9 parameters.
 
 |  Parameter                                                          	| Type   	|
 |---------------------------------------------------------------------------------	|:--------:	|
-| (*task)(void\*pd): pointer on the task function                                  	| void   	|
-| *pdata: payload pointer used at the creation                                    	| void   	|
-| *ptos: pointer on top of stack                                                  	| OS_STK 	|
+| (task)(void\*pd): pointer on the task function                                  	| void *   	|
+| pdata: payload pointer used at the creation                                    	| void *   	|
+| ptos: pointer on top of stack                                                  	| OS_STK * 	|
 | prio: priority of the task (limited to 64)                                      	| INT8U  	|
-| id: task ID. Extension of the previous limitation to 64 values, else id = prio  	| INT16U 	|
-| *pbos: Bottom of stack                                                          	| OS_STK 	|
-| stk_size: stack size (for stack checking )                                      	| INT32U 	|
-| *pext: user data extension                                                      	| void   	|
-| opt: uCOS_ii.h contains the list of options. Each constant is a binary flag.    	| INT16U 	|
+| id: task ID. Extension of the previous limitation to 64 values. If NULL, id = prio  	| INT16U 	|
+| pbos: Bottom of stack                                                          	| OS_STK * 	|
+| stk_size: stack size (for stack checking)                                      	| INT32U 	|
+| pext: user data extension                                                      	| void   	|
+| opt: uCOS_ii.h contains the list of options. Each constant is a binary flag.    	| INT16U * 	|
 
 
 
