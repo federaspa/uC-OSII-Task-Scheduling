@@ -81,6 +81,8 @@ cumulating values, and since we were extracting much slower than we were inserti
 We wanted to exploit the potential of the RTOS system, so we created 4 tasks in order to split and parallelize the total computational power.\
 Each task has simple assignments, such as waiting for the pressing of a button or computing the average once a new value is received.
 
+![image](https://github.com/federaspa/uC-OSII-Task-Scheduling/blob/main/Images/Task_Diagram.drawio.png)
+
 # Monitoring the execution
 
 ## Let us add some monitoring functions to our code
