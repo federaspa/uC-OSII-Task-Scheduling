@@ -246,11 +246,7 @@ Despite our efforts with the code, we did not have time to finish debugging it a
     task may execute several times per second, depending on the speed of
     the system and how often it is scheduled.
 
--   Task2: It's a bit more complicated to estimate the number of
-    executions of this task since it contains both variable delays and
-    random numbers.
-
-    The loop inside the task contains a call to rand(), which generates
+-   Task2: The loop inside the task contains a call to rand(), which generates
     a random number between 0 and max_time (where max_time is equal to
     ones + 1). Assuming a uniform distribution of rand() values, we can
     estimate that on average, this task will generate a random number
@@ -258,21 +254,15 @@ Despite our efforts with the code, we did not have time to finish debugging it a
 
     After generating a random number, the task enters a loop that runs
     for a duration equal to the random number, with an iteration time of
-    200 milliseconds. Therefore, the loop will execute random_number /
-    0.2 times (i.e., 5 \* random_number times) before exiting.
-
-    Assuming that the rand() values are uniformly distributed and that
-    the ones value is equally likely to be any number between 0 and 8
-    (the maximum value that can be read from the switches), we can
-    estimate the expected number of loop iterations as
-    follows:$$expected\_iterations = (8 + 1) * (5 * (8 / 2 + 1)) = 225$$
-    So we can expect this task to be executed approximately 225 times
+    200 milliseconds. 
+    
+    We can expect this task to be executed approximately 225 times
     per second, on average. However, it's worth noting that this is just
     an estimate and that the actual number of executions will vary
     depending on the randomness of the rand() function and the specific
     values of the ones data.
 
--   Task3: this task is waiting for the value of the PostButton mailbox.
+-   Task3: This task is waiting for the value of the PostButton mailbox.
     When the value is 8, it will print the final time and turn off the
     LEDs.
 
@@ -289,16 +279,13 @@ Despite our efforts with the code, we did not have time to finish debugging it a
     task 2 is not very predictable as it depends on the button presses,
     but we can estimate that the average time between messages is
     approximately 200ms. Task 3 waits for the button 8 press, which we
-    know only happens once after button 0 is pressed in task 2, so we
+    know only happens once after button 1 is pressed in task 2, so we
     can estimate this task to execute once per button press in task 2.
-    Based on these assumptions, we can estimate the expected number of
-    executions to be around 5-10 times per minute.
 
 -   Task5: This task runs an infinite loop with a 5-second delay between
     iterations, and each iteration it prints the stack usage of four
     other tasks. The execution count of task 5 would depend on how long
-    the system runs, but assuming the system runs continuously, task 5
-    would execute approximately 12 times per minute
+    the system runs.
 
 ### Mean execution time 
 
