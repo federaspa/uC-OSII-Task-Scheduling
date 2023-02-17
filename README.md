@@ -61,11 +61,11 @@ We experimented with the time delays in order to understand how the scheduling t
 $$D1=kD2$$
 Where $D1$ is the delay of the first task, $D2$ the delay for the second task and $k$ is a multiplicative factor taking various values.
 ### MailBox
-We noticed that when we set $k = 5$, meaning $D1 > D2$, the counter
+We noticed that when we set $k = 5$, meaning $D1 < D2$, the counter
 on the BCD increased by 5 at a time. \
 This happened because while the first task was running the second one had to wait for its (bigger) delay to expire, at which point the timer already increased by 5. 
 If instead
-we kept  $D1 < D2$, the counter updated by 1 at a time.
+we set  $D1 > D2$, the counter updated by 1 at a time.
 
 ### MessageQueue
 We noticed that when keeping $k = 5$, the counter
