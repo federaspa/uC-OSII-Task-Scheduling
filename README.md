@@ -2,7 +2,7 @@
 
 The aim of this project is to implement a Reflex testing game using the task scheduling functions of μC/OS-II. \
 Please refer to [this repository](https://github.com/federaspa/Reflex-game "Reflex game repo") for the basic implementation and details about the game.\
-Note that this type of game does not make full use of the real-time capabilities of the OS, but provided us a solid scheleton on which to experiment.
+Note that this type of game does not make full use of the real-time capabilities of the OS, but provided us a solid skeleton on which to experiment.
 
 ## Let us recall how a task is created in μC/OS-II
 
